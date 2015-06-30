@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Http\Controllers\Auth;
+<?php namespace GestorImagenes\Http\Controllers\Validacion;
 
 use GestorImagenes\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -57,7 +57,7 @@ class ValidacionController extends Controller {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function postRegister(Request $request)
+	public function postRegistro(Request $request)
 	{
 		$validator = $this->registrar->validator($request->all());
 
@@ -78,7 +78,7 @@ class ValidacionController extends Controller {
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function getLogin()
+	public function getInicio()
 	{
 		return 'Mostrando formulario inicio de sesión';
 	}
@@ -89,7 +89,7 @@ class ValidacionController extends Controller {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function postLogin(Request $request)
+	public function postInicio(Request $request)
 	{
 		$this->validate($request, [
 			'email' => 'required|email', 'password' => 'required',
@@ -124,7 +124,7 @@ class ValidacionController extends Controller {
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function getLogout()
+	public function getSalida()
 	{
 		$this->auth->logout();
 
@@ -153,7 +153,7 @@ class ValidacionController extends Controller {
 	 */
 	public function loginPath()
 	{
-		return property_exists($this, 'loginPath') ? $this->loginPath : '/validado/iniciar';
+		return property_exists($this, 'loginPath') ? $this->loginPath : '/validacion/iniciar';
 	}
 
 
@@ -174,6 +174,12 @@ class ValidacionController extends Controller {
 	{
 		return 'Recuperando contraseña';
 	}
+
+	public function missingMethod($parameters = array())
+    {
+        abort(404);
+    }
+
 
 
 

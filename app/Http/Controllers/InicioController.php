@@ -1,6 +1,6 @@
 <?php namespace GestorImagenes\Http\Controllers;
 
-class HomeController extends Controller {
+class InicioController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -32,5 +32,11 @@ class HomeController extends Controller {
 	{
 		return 'Página de inicio validado';
 	}
+
+	public function missingMethod($parameters = array())
+    {
+        abort(404);
+    }
+
 
 }

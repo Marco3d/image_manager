@@ -45,6 +45,12 @@ class AlbumController extends Controller {
 		return 'Eliminar Album';
 	}
 
+    public function missingMethod($parameters = array())
+    {
+        abort(404);
+    }
+
+
 	
 
 

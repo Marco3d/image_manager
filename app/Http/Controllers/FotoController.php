@@ -45,6 +45,12 @@ class FotoController extends Controller {
 		return 'Eliminar foto';
 	}
 
+	public function missingMethod($parameters = array())
+    {
+        abort(404);
+    }
+
+
 
 
 

@@ -1,6 +1,6 @@
 <?php namespace GestorImagenes\Http\Controllers;
 
-class WelcomeController extends Controller {
+class BienvenidaController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -32,5 +32,11 @@ class WelcomeController extends Controller {
 	{
 		return 'Bienvenida a la aplicación';
 	}
+
+	public function missingMethod($parameters = array())
+    {
+        abort(404);
+    }
+
 
 }
