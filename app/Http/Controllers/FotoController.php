@@ -1,58 +1,41 @@
 <?php namespace GestorImagenes\Http\Controllers;
-
-class FotoController extends Controller {
-
+class FotoController extends Controller
+{
 	public function __construct()
 	{
-		$this->middleware('guest');
+		$this->middleware('auth');
 	}
-
-
 	public function getIndex()
 	{
 		return 'mostrando fotos del usuario';
 	}
-
 	
 	public function getCrearFoto()
 	{
-		return 'Formulario de crear foto';
+		return 'formulario de crear fotos';
 	}
-
-	public function putCrearFoto()
+	public function postCrearFoto()
 	{
 		return 'almacenando foto';
 	}
-
-	public function getEliminarFoto()
+	public function getActualizarFoto()
 	{
-		return 'Formulario de Eliminar foto';
+		return 'formulario de actualizar fotos';
 	}
-
-	public function putActualizarFoto()
+	public function postActualizarFoto()
 	{
 		return 'actualizar foto';
 	}
-
-
 	public function getEliminarFoto()
 	{
-		return 'Formulario de Eliminar foto';
+		return 'formulario de eliminar fotos';
 	}
-
-	public function putEliminarFoto()
+	public function postEliminarFoto()
 	{
-		return 'Eliminar foto';
+		return 'eliminar foto';
 	}
-
 	public function missingMethod($parameters = array())
-    {
-        abort(404);
-    }
-
-
-
-
-
-
+	{
+		abort(404);
+	}
 }

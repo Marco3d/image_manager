@@ -24,9 +24,9 @@ class AlbumController extends Controller {
 		return 'almacenando Album';
 	}
 
-	public function getEliminarAlbum()
+	public function getActualizarAlbum()
 	{
-		return 'Formulario de Eliminar Album';
+		return 'Formulario de actualizar Album';
 	}
 
 	public function putActualizarAlbum()
