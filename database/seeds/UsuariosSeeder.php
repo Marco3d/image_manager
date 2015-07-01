@@ -9,7 +9,7 @@ use Illuminate\Support\Facades;
 
 
 
-class DatabaseSeeder extends Seeder {
+class UsuariosSeeder extends Seeder {
 
 	/**
 	 * Run the database seeds.
@@ -18,15 +18,18 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Foto::truncate();
-		Album::truncate();
-		Usuario::truncate();
+       
+		for ($i=1; $i < 50 ; $i++) { 
+			Usuario::create(
+				[
+					'nombre' => "usuario$i",
+					'email' => "email$i@test.com",
+					'password' => bcrypt("pass$i"),
+					'pregunta' => "preg$i", 
+					'respuesta' => "resp$i" 
 
-		$this->call('UsuariosSeeder');
-		$this->call('AlbumesSeeder');
-		$this->call('FotosSeeder');
-
+				]);
+		}
 
 	}
 
